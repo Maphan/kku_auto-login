@@ -1,0 +1,22 @@
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+nacAuth();
+function nacAuth() {
+    var $nac = "https://nac08.kku.ac.th/login";
+    var user='xxxxxxxxxx'; //set your username
+    var pass='xxxxxxxxxxxxx'; //set your passwork
+    var d='';
+    var popup=true;
+    
+    $.ajax({
+        url: $nac,
+        type: 'POST',
+        dataType: 'html',
+        cache: false,
+        data: {username:user,password:pass,dst:d,popup:popup},
+    });
+
+    setTimeout(function() { window.location.href = "https://login.kku.ac.th/status" }, 700);
+}
+</script>
